@@ -7,11 +7,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix"
+    "lint:fix": "next lint --fix",
+    "prepare": "husky"
+  },
+  "hooks": {
+    "pre-commit": "lint-staged"
   },
   "dependencies": {
     "globals": "^16.1.0",
-    "husky": "^9.1.7",
     "next": "15.1.8",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
@@ -31,6 +34,8 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-unicorn": "^59.0.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.0.0",
     "postcss": "^8",
     "prettier": "^3.5.3",
     "tailwindcss": "^3.4.1",
