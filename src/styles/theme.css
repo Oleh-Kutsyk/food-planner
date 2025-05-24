@@ -1,0 +1,15 @@
+:root {
+    /* Your default theme */
+    --main: rgb(254 251 244);
+    --header: rgb(255, 255, 255);
+    --color: #2f2c2c;
+    --layout: 1.5rem;
+}
+
+.dark {
+    /* Your dark theme */
+    --main: #2f2c2c;
+    --header: #000000;
+
+    --color: rgb(254 251 244);
+}
