@@ -50,6 +50,7 @@ export default [
       'unicorn/empty-brace-spaces': 'error',
       'unicorn/prefer-includes': 'error',
       '@typescript-eslint/no-shadow': ['error'],
+      '@typescript-eslint/no-floating-promises': ['off'],
       '@typescript-eslint/no-explicit-any': ['error'],
       'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': [

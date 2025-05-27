@@ -8,6 +8,8 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/services/i18n/routing';
 
 import { Noto_Sans } from 'next/font/google';
+import { HttpClientProvider } from '@/providers/httpClientProvider';
+import { SnackbarProvider } from '@/providers/SnackbarProvider';
 
 const roboto = Noto_Sans({
   weight: '500',
@@ -33,12 +35,16 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body className={`${roboto.className} antialiased`}>
-        <NextIntlClientProvider>
-          <ThemeProvider>
-            <Header />
-            <main className='mt-3 px-layout'>{children}</main>
-          </ThemeProvider>
-        </NextIntlClientProvider>
+        <ThemeProvider>
+          <NextIntlClientProvider>
+            <SnackbarProvider>
+              <HttpClientProvider>
+                <Header />
+                <main className='mt-3 px-layout'>{children}</main>
+              </HttpClientProvider>
+            </SnackbarProvider>
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
