@@ -1,5 +1,16 @@
 {
-  "Home": {
-    "title": "Ласкаво просимо"
+  "auth": {
+    "email": "Email",
+    "password": "Password",
+    "signin": "Sign in",
+    "signinIntoAccount": "Sign in to your account",
+    "signup": "Sign up",
+    "createAccount": "Create your account"
+  },
+  "errors": {
+    "invalidEmail": "Email is not valid",
+    "requiredEmail": "Email is required",
+    "invalidPassword": "Password is not valid",
+    "requiredPassword": "Password is required"
   }
 }
