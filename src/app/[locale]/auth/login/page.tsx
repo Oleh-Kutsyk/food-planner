@@ -5,11 +5,14 @@ import Input from '@/components/input';
 import { Button } from '@/components/button';
 import { useLoginSchema } from '@/hooks/yup/useLoginSchema';
 import { useTranslations } from 'next-intl';
+import { useStore } from '@/providers/storeProvider';
 
 const Login = () => {
   const { loginSchema } = useLoginSchema();
   const t = useTranslations('auth');
 
+  const auth = useStore(state => state);
+  console.log('auth', auth);
   return (
     <>
       <div className='flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8'>
@@ -17,11 +20,13 @@ const Login = () => {
           <h2 className='mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900'>
             {t('signinIntoAccount')}
           </h2>
+          <p>{auth.isAuth ? 'Logged in' : 'Logged out'}</p>
         </div>
 
         <div className='mt-12 sm:mx-auto sm:w-full sm:max-w-sm'>
           <Form
             onSubmit={async data => {
+              auth.setIsAuth(false);
               console.log(data);
             }}
             validationSchema={loginSchema}
